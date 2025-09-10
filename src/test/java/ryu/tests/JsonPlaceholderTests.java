@@ -4,9 +4,21 @@ import org.testng.annotations.Test;
 
 public class JsonPlaceholderTests {
 
-    @Test
-    public void testGetAllUsers() {
+    // This test is temperory to test the API class, hence modify later to test it actually.
+
+    @Test(groups = {"temp"}, enabled = true)
+    public void temperoryTests() {
+
         JsonPlaceholderApi api = new JsonPlaceholderApi();
-        System.out.println(api.getAllUsers().getStatusCode());
+        String boldRed = "\u001B[1;32m";
+        String reset = "\u001B[0m";
+
+        // checks getAllUsers() method
+        System.out.println(boldRed + "\ngetAllUsers() response:\n" + reset);
+        System.out.println(api.getAllUsers().asString() + "\n");
+
+        // checks getUserById() method
+        System.out.println(boldRed + "\ngetUserById() response:\n" + reset);
+        System.out.println(api.getUserById(1).asString() + "\n");
     }
 }
