@@ -20,5 +20,9 @@ public class JsonPlaceholderTests {
         // checks getUserById() method
         System.out.println(boldRed + "\ngetUserById() response:\n" + reset);
         System.out.println(api.getUserById(1).asString() + "\n");
+
+        // checks createUser() method
+        System.out.println(boldRed + "\ncreateUser() response:\n" + reset);
+        System.out.println(api.createUser("John Doe", "John.Doe@abc.com").asString() + "\n");
     }
 }
