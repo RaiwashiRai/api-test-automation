@@ -54,4 +54,15 @@ public class JsonPlaceholderApi {
                 .then()
                 .extract().response();
     }
+
+    public Response deleteUser(int id) {
+        // delete user by id
+
+        return given()
+                .pathParam("id", id)
+                .when()
+                .delete("/users/{id}")
+                .then()
+                .extract().response();
+    }
 }

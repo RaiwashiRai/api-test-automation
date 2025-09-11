@@ -24,5 +24,9 @@ public class JsonPlaceholderTests {
         // checks createUser() method
         System.out.println(boldRed + "\ncreateUser() response:\n" + reset);
         System.out.println(api.createUser("John Doe", "John.Doe@abc.com").asString() + "\n");
+
+        // checks deleteUser() method
+        System.out.println(boldRed + "\ndeleteUser() response:\n" + reset);
+        System.out.println(api.deleteUser(1).asString() + "\n");
     }
 }
