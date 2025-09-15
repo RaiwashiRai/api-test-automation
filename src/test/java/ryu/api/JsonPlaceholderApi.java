@@ -2,7 +2,7 @@ package ryu.api;
 
 import ryu.utils.Config; // Base URL for the API
 import io.restassured.RestAssured;  // RestAssured main class
-import io.restassured.response.Response;      // Holds HTTP/HTTPS response
+import io.restassured.response.ValidatableResponse;      // Holds HTTP/HTTPS response
 import static io.restassured.RestAssured.*;   // given(), when(), then()
 
 import java.util.HashMap; // needed for using HashMap
@@ -17,28 +17,26 @@ public class JsonPlaceholderApi {
         RestAssured.baseURI = Config.JsonPlaceholder_BASE_URL; 
     }
     
-    public Response getAllUsers(){
+    public ValidatableResponse getAllUsers(){
         // returns all users
 
         return given()
                 .when()
                 .get("/users")
-                .then()
-                .extract().response();
+                .then();
     }
 
-    public Response getUserById(int id){
+    public ValidatableResponse getUserById(int id){
         // taked id and returns user details
 
         return given()
                 .pathParam("id", id)
                 .when()
                 .get("/users/{id}")
-                .then()
-                .extract().response();
+                .then();
     }
 
-    public Response createUser (String name, String email) {
+    public ValidatableResponse createUser (String name, String email) {
         // create user given name and email
 
         
@@ -51,18 +49,16 @@ public class JsonPlaceholderApi {
                 .body(user)
                 .when()
                 .post("/users")
-                .then()
-                .extract().response();
+                .then();
     }
 
-    public Response deleteUser(int id) {
+    public ValidatableResponse deleteUser(int id) {
         // delete user by id
 
         return given()
                 .pathParam("id", id)
                 .when()
                 .delete("/users/{id}")
-                .then()
-                .extract().response();
+                .then();
     }
 }
