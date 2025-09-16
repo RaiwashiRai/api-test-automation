@@ -52,6 +52,30 @@ public class JsonPlaceholderApi {
                 .then();
     }
 
+    public ValidatableResponse resetUser(int id, Map <String, Object> user) {
+        // reset user details given id and user details in map, creates new user if id not found
+
+        return given()
+                .contentType("application/json")
+                .pathParam("id", id)
+                .body(user)
+                .when()
+                .put("/users/{id}")
+                .then();
+    }
+
+    public ValidatableResponse updateUser(int id, Map <String, Object> user) {
+        // update user details given id and user details in map.
+
+        return given()
+                .contentType("application/json")
+                .pathParam("id", id)
+                .body(user)
+                .when()
+                .patch("/users/{id}")
+                .then();
+    }
+
     public ValidatableResponse deleteUser(int id) {
         // delete user by id
 
