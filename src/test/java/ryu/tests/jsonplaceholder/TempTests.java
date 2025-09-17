@@ -1,7 +1,7 @@
-package ryu.tests;
+package ryu.tests.jsonplaceholder;
 
-import ryu.tests.BaseTest;
-import ryu.utils.TestData;
+import ryu.tests.jsonplaceholder.BaseTest;
+import ryu.utils.jsonplaceholder.TestData;
 
 import org.testng.annotations.Test;
 import ryu.api.JsonPlaceholderApi;
@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 
-public class JsonPlaceholderTests extends BaseTest {
+public class TempTests extends BaseTest {
     
 
     private JsonPlaceholderApi api = new JsonPlaceholderApi(); // change later if needed -> to @beforClass or keep it in base test class

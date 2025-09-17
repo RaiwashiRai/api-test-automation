@@ -1,4 +1,4 @@
-package ryu.api;
+package ryu.api.jsonplaceholder;
 
 import ryu.utils.Config; // Base URL for the API
 import io.restassured.RestAssured;  // RestAssured main class
@@ -9,7 +9,7 @@ import java.util.HashMap; // needed for using HashMap
 import java.util.Map; // needed for using Map
 
 
-public class JsonPlaceholderApi {
+public class UserApi {
     // public static final String BASE_URL = Config.JsonPlaceholder_BASE_URL;
     
     static {
