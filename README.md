@@ -1,4 +1,80 @@
-A personal project to practice and demonstrate API automation using Java, RestAssured, and TestNG.
+# API Test Automation for JSONPlaceholder
 
-API used
-- JsonPlaceholder
+This project is an automated API testing framework for the REST API. It demonstrates API test automation using Java, Maven, TestNG, and REST-assured with best practices.
+
+
+## 🕸️ APIs Used
+- JSONPlaceholder API
+
+
+## 📚 Project Structure
+
+```
+src/
+  test/
+    java/
+      ryu/
+        api/jsonplaceholder/      # API client abstraction
+        tests/jsonplaceholder/    # Test classes (CRUD, Negative, Schema, Smoke, Temp)
+        utils/                    # Config and test data utilities
+    resources/
+      ryu/schemas/               # JSON schemas for validation
+.github/
+  workflows/                     # CI/CD pipeline (GitHub Actions)
+```
+
+
+
+## 🚀 Tech Stack
+
+- **Java**
+- **TestNG**
+- **REST-assured**
+- **Surefire-reports**
+
+
+## ⚙️ Setup
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-username/api-test-automation.git
+   cd api-test-automation
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   mvn clean install
+   ```
+
+3. **(Optional) Configure settings:**  
+   Edit `Config.java` or add properties files if you want to change base URLs or environment settings.
+
+
+## 🧪 Running Tests
+
+- **All tests:**
+  ```sh
+  mvn test
+  ```
+
+- **Specific groups (e.g., smoke):**
+  ```sh
+  mvn test -Dgroups=smoke
+  ```
+
+- **View test reports:**  
+  Open `target/surefire-reports/index.html` in your browser for a summary.
+
+
+
+## 🏗️ CI/CD
+
+- Manually triggered execution via [GitHub Actions](.github/workflows/ci.yml).
+- Test summary generated for each run.
+
+
+
+
+## 📄 License
+
+Copyright (c) 2025 Shubham Gaikwad (GitHub: RaiwashiRai). All Rights Reserved. See [LICENSE](LICENSE) for details.

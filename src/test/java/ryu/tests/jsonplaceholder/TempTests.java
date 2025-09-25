@@ -12,35 +12,35 @@ public class TempTests extends BaseTest {
     @Test(groups = {"temp"}, enabled = false)
     public void testGetAllUsers() {
         ValidatableResponse allUsers = api.getAllUsers();
-        // System.out.println(extractResponse(allUsers).asString());
+        System.out.println(extractResponse(allUsers).asString());
         allUsers.statusCode(200);
     }
 
     @Test(groups = {"temp"}, enabled = false)
     public void testGetUserById() {
         ValidatableResponse userById = api.getUserById(1);
-        // System.out.println(extractResponse(userById).asString());
+        System.out.println(extractResponse(userById).asString());
         userById.statusCode(200);
     }
 
     @Test(groups = {"temp"}, enabled = false)
     public void testCreateUser() {
         ValidatableResponse createUser = api.createUser(TestData.newUser);
-        // System.out.println(extractResponse(createUser).asString());
+        System.out.println(extractResponse(createUser).asString());
         createUser.statusCode(201);
     }
 
     @Test(groups = {"temp"}, enabled = false)
     public void testResetUser() {
         ValidatableResponse resetUser = api.resetUser((Integer) TestData.existingUser.get("id"), TestData.existingUser);
-        // System.out.println(extractResponse(resetUser).asString());
+        System.out.println(extractResponse(resetUser).asString());
         resetUser.statusCode(200);
     }
 
     @Test(groups = {"temp"}, enabled = false)
     public void testResetUserNew() {
         ValidatableResponse resetUserNew = api.resetUser((Integer) TestData.existingUser.get("id"), TestData.newUser);
-        // System.out.println(extractResponse(resetUserNew).asString());
+        System.out.println(extractResponse(resetUserNew).asString());
         resetUserNew.statusCode(200);
     }
 
