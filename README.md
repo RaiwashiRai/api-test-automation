@@ -46,10 +46,6 @@ src/
    mvn clean install
    ```
 
-3. **(Optional) Configure settings:**  
-   Edit `Config.java` or add properties files if you want to change base URLs or environment settings.
-
-
 ## 🧪 Running Tests
 
 - **All tests:**
