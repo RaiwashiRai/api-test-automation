@@ -36,13 +36,8 @@ public class UserApi {
                 .then();
     }
 
-    public ValidatableResponse createUser (String name, String email) {
-        // create user given name and email
-
-        
-        Map<String, String> user = new HashMap<>();
-        user.put("name", name);
-        user.put("email", email);
+    public ValidatableResponse createUser (Map <String, Object> user) {
+        // create user map
 
         return given()
                 .contentType("application/json")

@@ -25,7 +25,7 @@ public class TempTests extends BaseTest {
 
     @Test(groups = {"temp"}, enabled = false)
     public void testCreateUser() {
-        ValidatableResponse createUser = api.createUser("John Doe", "John.Doe@abc.com");
+        ValidatableResponse createUser = api.createUser(TestData.newUser);
         // System.out.println(extractResponse(createUser).asString());
         createUser.statusCode(201);
     }
