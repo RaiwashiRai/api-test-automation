@@ -19,7 +19,7 @@ public class CrudTests extends BaseTest {
     public void testCreateUser() {
         String name = (String) TestData.newUser.get("name");
         String email = (String) TestData.newUser.get("email");
-        ValidatableResponse createUser = api.createUser(name, email);
+        ValidatableResponse createUser = api.createUser(TestData.newUser);
         createUser.statusCode(201)
                   .body("name", equalTo(name))
                   .body("email", equalTo(email));
@@ -27,7 +27,7 @@ public class CrudTests extends BaseTest {
 
     // Test : Read an existing user, or users
     @Test(groups = {"crud"})
-    public void testGetUserByI() {
+    public void testGetUserById() {
         ValidatableResponse userById = api.getUserById(1);
         userById.statusCode(200)
                 .body("id", equalTo(1))

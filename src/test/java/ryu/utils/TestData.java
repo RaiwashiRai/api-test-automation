@@ -1,5 +1,6 @@
 package ryu.utils;
 
+import java.util.HashMap; // needed for using HashMap
 import java.util.Map; // needed for using Map
 
 public class TestData {
@@ -17,4 +18,7 @@ public class TestData {
         "name", "New User",
         "email", "new@user"
     );
+
+    // empty map for negative test
+    public static final Map <String, Object> emptyMap = new HashMap<>();
 }
