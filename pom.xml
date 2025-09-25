@@ -49,6 +49,14 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.15.2</version>
     </dependency>
+
+    <!-- JSON Schema Validator for validating JSON responses against a schema -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-schema-validator</artifactId>
+      <version>5.5.6</version> <!-- match your RestAssured version -->
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
