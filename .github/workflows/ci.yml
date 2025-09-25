@@ -1,14 +1,14 @@
 name: CI Pipeline
 
 on:
-  workflow_dispatch:   # 👈 allows running manually from GitHub UI
+  workflow_dispatch:   # manual trigger
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
@@ -17,15 +17,19 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Install dependencies
-        run: mvn install -DskipTests
+      - name: Run tests only
+        run: mvn test -DskipTests=false -B   # -B for batch mode, less console noise
 
-      - name: Run tests
-        run: mvn test
-
-      - name: Publish test reports
+      # Optional: only keep summary to reduce artifact size
+      - name: Save test summary
+        if: always()
+        run: |
+          mkdir -p test-summary
+          grep -E "Tests run|Failures|Errors|Skipped" target/surefire-reports/*.txt > test-summary/summary.txt
+      - name: Upload test summary
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-reports
-          path: target/surefire-reports/
+          name: test-summary
+          path: test-summary/
+          retention-days: 7
