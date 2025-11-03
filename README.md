@@ -2,6 +2,9 @@
 
 This project is an automated API testing framework for the REST API. It demonstrates API test automation using Java, Maven, TestNG, and REST-assured with best practices.
 
+[![GitHub Release](https://img.shields.io/github/v/release/RaiwashiRai/api-test-automation)](https://github.com/RaiwashiRai/api-test-automation/releases)
+![Last Commit](https://img.shields.io/github/last-commit/RaiwashiRai/api-test-automation)
+![Top Language](https://img.shields.io/github/languages/top/RaiwashiRai/api-test-automation)
 
 ## 🕸️ APIs Used
 - JSONPlaceholder API
